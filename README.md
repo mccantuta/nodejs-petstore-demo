@@ -1,2 +1,2 @@
 # nodejs-petstore-demo
-Demo using NodeJS, Postgres and Node modules
+Demo using NodeJS, PostgreSQL, and Node modules(Express, Knex).
