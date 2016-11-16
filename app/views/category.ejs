@@ -1,0 +1,8 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Categories</div>
+  <div class="list-group">
+    <% categories.forEach(function(category) { %>
+    <a href="../product/<%= category.id%>" class="list-group-item"><%= category.name%></a>
+    <% }); %>
+  </div>
+</div>  

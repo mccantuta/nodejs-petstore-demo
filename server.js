@@ -3,14 +3,16 @@
 * @License: GNU General Public License V3.0
 * @Copyright: Copyright (C) 2016 Miguel Ccantuta Leon
 */
-var creditCardTypeService = require('./app/service/creditCardTypeService');
+const creditCardTypeService = require('./app/service/creditCardTypeService');
+const express = require('express');
+const app = express();
+const routes = require('./app/routes/')
 
-creditCardTypeService.getAll().
-  then((data) => {
-    for (var cct of data) {
-      console.log(cct['name']);
-    }
-  }).
-  catch(function(error) {
-    console.log(error);
-  });
+app.set('views', __dirname + '/app/views');
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use('/', routes);
+
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+})
